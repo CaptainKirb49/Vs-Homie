@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="homie.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="homie down0000" x="0" y="0" width="1034" height="1218" frameX="0" frameY="-3" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0001" x="1035" y="0" width="989" height="1204" frameX="-18" frameY="0" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0002" x="1035" y="0" width="989" height="1204" frameX="-18" frameY="0" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0003" x="2025" y="0" width="946" height="1178" frameX="-33" frameY="-10" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0004" x="2025" y="0" width="946" height="1178" frameX="-33" frameY="-10" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0005" x="2972" y="0" width="899" height="1131" frameX="-57" frameY="-40" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0006" x="2972" y="0" width="899" height="1131" frameX="-57" frameY="-40" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie down0007" x="3872" y="0" width="790" height="1066" frameX="-121" frameY="-64" frameWidth="1034" frameHeight="1221"/>
+	<SubTexture name="homie idle0000" x="4663" y="0" width="883" height="1107" frameX="0" frameY="-4" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0001" x="5547" y="0" width="858" height="1089" frameX="-9" frameY="-2" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0002" x="5547" y="0" width="858" height="1089" frameX="-9" frameY="-2" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0003" x="6406" y="0" width="824" height="1069" frameX="-24" frameY="0" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0004" x="6406" y="0" width="824" height="1069" frameX="-24" frameY="0" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0005" x="7231" y="0" width="802" height="1050" frameX="-34" frameY="-3" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0006" x="7231" y="0" width="802" height="1050" frameX="-34" frameY="-3" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie idle0007" x="0" y="1219" width="768" height="1024" frameX="-51" frameY="-6" frameWidth="883" frameHeight="1111"/>
+	<SubTexture name="homie left0000" x="769" y="1219" width="988" height="1194"/>
+	<SubTexture name="homie left0001" x="1758" y="1219" width="975" height="1178" frameX="-13" frameY="-6" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0002" x="1758" y="1219" width="975" height="1178" frameX="-13" frameY="-6" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0003" x="2734" y="1219" width="949" height="1152" frameX="-36" frameY="-20" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0004" x="2734" y="1219" width="949" height="1152" frameX="-36" frameY="-20" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0005" x="3684" y="1219" width="858" height="1090" frameX="-91" frameY="-73" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0006" x="3684" y="1219" width="858" height="1090" frameX="-91" frameY="-73" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie left0007" x="4543" y="1219" width="768" height="1024" frameX="-143" frameY="-125" frameWidth="988" frameHeight="1194"/>
+	<SubTexture name="homie right0000" x="5312" y="1219" width="915" height="1147"/>
+	<SubTexture name="homie right0001" x="6228" y="1219" width="874" height="1128" frameX="-21" frameY="-12" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0002" x="6228" y="1219" width="874" height="1128" frameX="-21" frameY="-12" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0003" x="7103" y="1219" width="852" height="1120" frameX="-24" frameY="-19" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0004" x="7103" y="1219" width="852" height="1120" frameX="-24" frameY="-19" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0005" x="0" y="2414" width="820" height="1102" frameX="-27" frameY="-26" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0006" x="0" y="2414" width="820" height="1102" frameX="-27" frameY="-26" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie right0007" x="821" y="2414" width="787" height="1072" frameX="-35" frameY="-36" frameWidth="915" frameHeight="1147"/>
+	<SubTexture name="homie up0000" x="1609" y="2414" width="887" height="1114"/>
+	<SubTexture name="homie up0001" x="2497" y="2414" width="874" height="1107" frameX="-11" frameY="-7" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0002" x="2497" y="2414" width="874" height="1107" frameX="-11" frameY="-7" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0003" x="3372" y="2414" width="829" height="1084" frameX="-36" frameY="-29" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0004" x="3372" y="2414" width="829" height="1084" frameX="-36" frameY="-29" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0005" x="4202" y="2414" width="807" height="1073" frameX="-49" frameY="-40" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0006" x="4202" y="2414" width="807" height="1073" frameX="-49" frameY="-40" frameWidth="887" frameHeight="1114"/>
+	<SubTexture name="homie up0007" x="5010" y="2414" width="780" height="1054" frameX="-59" frameY="-59" frameWidth="887" frameHeight="1114"/>
+</TextureAtlas>

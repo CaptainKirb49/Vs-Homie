@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "homie idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				11,
+				71
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "homie left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-48,
+				29
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "homie right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				46
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "homie down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-40,
+				50
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "homie up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/homie",
+	"position": [
+		-190,
+		-120
+	],
+	"healthicon": "homie",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		200,
+		250
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}
