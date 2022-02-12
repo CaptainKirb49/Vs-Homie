@@ -56,22 +56,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
-		var option:Option = new Option('No Antimash',	//even tho only one person asked, it here
-			"If checked, Antimash will be disabled.",
-			'noAntimash',
-			'bool',
-			false);
-		addOption(option); //now shut up before i put you in my basement
-		// PD: i dont have a basement
-
-		var option:Option = new Option('Input System', 
-			"The input system you wish to use.",
-			'inputSystem',
-			'string',
-			"Native",
-			["Native", "Kade Engine", "ZoroForce EK"]);
-		addOption(option);
-
 		var option:Option = new Option('Disable Reset Button',
 			"If checked, pressing Reset won't do anything.",
 			'noReset',
@@ -102,7 +86,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Sick! Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Sick!" in milliseconds.',
+			'Changes the amount of time you have\nfor hitting a "Sick!" in miliseconds.',
 			'sickWindow',
 			'int',
 			45);
@@ -113,7 +97,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Good Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Good" in milliseconds.',
+			'Changes the amount of time you have\nfor hitting a "Good" in miliseconds.',
 			'goodWindow',
 			'int',
 			90);
@@ -124,7 +108,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Bad Hit Window',
-			'Changes the amount of time you have\nfor hitting a "Bad" in milliseconds.',
+			'Changes the amount of time you have\nfor hitting a "Bad" in miliseconds.',
 			'badWindow',
 			'int',
 			135);

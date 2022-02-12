@@ -66,8 +66,7 @@ class ModsMenuState extends MusicBeatState
 
 	override function create()
 	{
-		Paths.clearStoredMemory();
-		Paths.clearUnusedMemory();
+		Paths.destroyLoadedImages();
 		WeekData.setDirectoryFromWeek();
 
 		#if desktop
@@ -78,8 +77,7 @@ class ModsMenuState extends MusicBeatState
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
-		bg.scale.x = bg.scale.y = scaleRatio;
-		bg.screenCenter();
+		
 		noModsTxt = new FlxText(0, 0, FlxG.width, "NO MODS INSTALLED\nPRESS BACK TO EXIT AND INSTALL A MOD", 48);
 		if(FlxG.random.bool(0.1)) noModsTxt.text += '\nBITCH.'; //meanie
 		noModsTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -113,16 +111,9 @@ class ModsMenuState extends MusicBeatState
 			{
 				if(!Paths.ignoreModFolders.contains(folder))
 				{
-					addToModsList([folder, false]);//i like it false by default. 
+					addToModsList([folder, true]);
 				}
 			}
-		}
-		saveTxt();
-
-		// FIND MOD FOLDERS
-		for (folder in Paths.getModDirectories())
-		{
-			addToModsList([folder, true]);
 		}
 		saveTxt();
 
@@ -324,8 +315,7 @@ class ModsMenuState extends MusicBeatState
 			if(loadedIcon != null)
 			{
 				newMod.icon.loadGraphic(loadedIcon, true, 150, 150);//animated icon support
-				var totalFrames = Math.floor(loadedIcon.width / 150) * Math.floor(loadedIcon.height / 150);
-				newMod.icon.animation.add("icon", [for (i in 0...totalFrames) i],10);
+				newMod.icon.animation.add("icon", getIntArray(Math.floor(loadedIcon.width / 150)),24);
 				newMod.icon.animation.play("icon");
 			}
 			else

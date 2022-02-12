@@ -41,7 +41,6 @@ class FreeplayState extends MusicBeatState
 	var intendedScore:Int = 0;
 	var intendedRating:Float = 0;
 
-
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
@@ -53,10 +52,9 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-		Paths.clearStoredMemory();
-		Paths.clearUnusedMemory();
-		
-		PlayState.isStoryMode = false;
+		#if MODS_ALLOWED
+		Paths.destroyLoadedImages();
+		#end
 		WeekData.reloadWeekFiles(false);
 
 		#if desktop
@@ -101,8 +99,6 @@ class FreeplayState extends MusicBeatState
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
-		bg.scale.x = bg.scale.y = scaleRatio;
-		bg.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -134,8 +130,6 @@ class FreeplayState extends MusicBeatState
 		scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
-		
-
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
@@ -178,23 +172,15 @@ class FreeplayState extends MusicBeatState
 		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
 		textBG.alpha = 0.6;
 		add(textBG);
-
-		#if PRELOAD_ALL
-		var leText:String = "Press SPACE to listen to the Song / Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-		var size:Int = 16;
-		#else
-		var leText:String = "Press CTRL to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.";
-		var size:Int = 18;
-		#end
-		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
-		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
+		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, "Press SPACE to open the Gameplay Changers Menu / Press RESET to Reset your Score and Accuracy.", 18);
+		text.setFormat(Paths.font("vcr.ttf"), 18, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
 		super.create();
 	}
 
 	override function closeSubState() {
-		changeSelection(0, false);
+		changeSelection();
 		super.closeSubState();
 	}
 
@@ -227,8 +213,6 @@ class FreeplayState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
-		
-
 
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, CoolUtil.boundTo(elapsed * 24, 0, 1)));
 		lerpRating = FlxMath.lerp(lerpRating, intendedRating, CoolUtil.boundTo(elapsed * 12, 0, 1));
@@ -254,7 +238,6 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
-		var ctrl = FlxG.keys.justPressed.CONTROL;
 
 		var shiftMult:Int = 1;
 		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
@@ -283,17 +266,12 @@ class FreeplayState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		if(ctrl)
-		{
-			openSubState(new GameplayChangersSubstate());
-		}
-		else if(space)
+		if(space)
 		{
 			if(instPlaying != curSelected)
 			{
 				#if PRELOAD_ALL
 				destroyFreeplayVocals();
-				FlxG.sound.music.volume = 0;
 				Paths.currentModDirectory = songs[curSelected].folder;
 				var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
@@ -311,6 +289,7 @@ class FreeplayState extends MusicBeatState
 				instPlaying = curSelected;
 				#end
 			}
+			openSubState(new GameplayChangersSubstate());
 		}
 
 		else if (accepted)
@@ -338,7 +317,7 @@ class FreeplayState extends MusicBeatState
 			}
 			
 			if (FlxG.keys.pressed.SHIFT){
-				LoadingState.loadAndSwitchState(new ChartingState());
+				FlxG.switchState(new ChartingState());
 			}else{
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
@@ -384,9 +363,9 @@ class FreeplayState extends MusicBeatState
 		positionHighscore();
 	}
 
-	function changeSelection(change:Int = 0, playSound:Bool = true)
+	function changeSelection(change:Int = 0)
 	{
-		if(playSound) FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
+		FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 
 		curSelected += change;
 
